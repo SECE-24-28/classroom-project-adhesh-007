@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adhesh VS - Portfolio</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth; /* smooth scrolling */
+    }
+
+    body {
+      font-family: 'French Script MT';
+      background: #f6f4ef;
+      color: #333;
+    }
+
+    /* HEADER FIXED */
+    header {
+      background: #aa8d6f;
+      padding: 15px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      /*position: fixed;*/
+      top: 0;
+      width: 100%;
+      z-index: 10;
+    }
+
+    .logo {
+      font-size: 40px;
+      font-weight: bold;
+      color: #2f3b18;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+
+    .btn {
+      background: #aa8d6f;
+      border: none;
+      padding: 5px 18px;
+      font-size: 35px;
+      cursor: pointer;
+      transition: 0.2s ease;
+      color: #333;
+      font-family: 'French Script MT';
+    }
+
+    .btn:hover {
+      color: white;
+      transform: scale(1.12);
+    }
+
+    /* HERO SECTION */
+    .hero {
+      position: relative;
+      height: 95vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 120px;
+      background: url("Hero picture.jpeg") center/cover no-repeat;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+      /* margin-top: 80px;  space for fixed header */
+    }
+
+    /* DARK OVERLAY */
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      z-index: 1;
+    }
+
+    .hero > div {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero h1 {
+      font-size: 100px;
+    }
+
+    .hero p {
+      font-size: 35px;
+      margin-top: 10px;
+    }
+
+    /* PROJECTS */
+    .projects-section {
+      padding: 40px 20px;
+      background: #eadbc8;
+    }
+
+    .projects-title {
+      font-size: 60px;
+      text-align: center;
+      margin-bottom: 20px;
+      color: #2f3b18;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .project-card {
+      padding: 20px;
+      height: 200px;
+      border-radius: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 35px;
+    }
+
+   /* ABOUT */
+.about-section {
+  padding: 60px 70px;
+  display: flex;
+  align-items: center;        /* vertical alignment */
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.about-section h2 {
+  font-size: 60px;
+  width: 100%;
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+.about-text {
+  max-width: 700px;
+  text-align: right;
+  font-size: 35px;
+}
+
+.left-img {
+  width: 500px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+
+    
+        /* skills */
+    .skills-section {
+      padding: 40px 20px;
+      text-align: center;
+      
+    }
+
+    .skills-section h2 {
+      font-size: 60px;
+      margin-bottom: 20px;
+    }
+
+    .skills-section p {
+      font-size: 35px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+
+        /* PROJECTS */
+    .certificates-section {
+      padding: 40px 20px;
+      background: #eadbc8;
+    }
+
+    .certificates-title {
+      font-size: 60px;
+      text-align: center;
+      margin-bottom: 20px;
+      color: #2f3b18;
+    }
+
+    .certificates-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .certificates-card {
+      padding: 20px;
+      height: 200px;
+      border-radius: 12px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 35px;
+    }
+
+
+
+    /* CONTACT */
+    .contact-section {
+      padding: 40px 20px;
+      text-align: center;
+      
+    }
+
+    .contact-section h2 {
+      font-size: 60px;
+      margin-bottom: 20px;
+    }
+
+    .contact-section p {
+      font-size: 35px;
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: #b2916b;
+      color: #3b0066;
+      text-align: center;
+      padding: 10px 15px;
+      font-family: "French Script MT", cursive;
+      font-size: 28px;
+      letter-spacing: 1px;
+    }
+
+    footer a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+  </style>
+</head>
+
+<body id="top">
+
+  <header>
+    <div class="logo">Adhesh V S</div>
+    <nav>
+      <ul>
+        <li><button class="btn">Projects</button></li>
+        <li><button class="btn">Skills</button></li>
+        <li><button class="btn">Certificates</button></li>
+        <li><button class="btn">Contact</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text-box">
+      <h1>Adhesh Known as</h1>
+      <p>Developer • Designer • Innovator</p>
+    </div>
+  </section>
+
+    <section class="about-section">
+  <img class="left-img" src="photo.png" alt="">
+
+  <!-- About -->
+  <div>
+    <h2>About Me</h2>
+    <p class="about-text">
+      Innovative Full-Stack Developer skilled in building scalable business 
+      applications with secure backend logic, optimized databases, and 
+      intuitive interfaces. Experienced in end-to-end development through real-
+      world systems including payments, invoicing, booking, and institutional 
+      utilities. Strong analytical thinker with 900+ coding problems solved 
+      and multiple certifications, showcasing deep technical clarity and consistency.
+      Excellent communicator and leader through Toastmasters, 
+      capable of translating business needs into effective technical solutions.
+    </p>
+  </div>
+</section>
+
+
+  <!-- PROJECTS -->
+  <section class="projects-section">
+    <h2 class="projects-title">Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">Project 1</div>
+      <div class="project-card">Project 2</div>
+      <div class="project-card">Project 3</div>
+      <div class="project-card">Project 4</div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+    <section class="skills-section">
+    <h2>Skills</h2>
+    <p>
+      Programming Languages: Python, Java, C++, SQL<br>
+      Data Analysis: Pandas, NumPy, Matplotlib, Seaborn<br>
+      Web Development: HTML, CSS, JavaScript<br>
+      Tools: Git, Jupyter Notebook, Tableau<br>
+      Soft Skills: Leadership, Public Speaking, Team Collaboration
+    </p>
+    
+  </section>
+
+  <!-- CERTIFICATES -->
+
+  <section class="certificates-section">
+    <h2 class="certificates-title">Certificate</h2>
+    <div class="certificates-grid">
+      <div class="certificates-card">Certificate 1</div>
+      <div class="certificates-card">Certificate 2</div>
+      <div class="certificates-card">Certificate 3</div>
+      <div class="certificates-card">Certificate 4</div>
+    </div>
+  </section>
+
+
+
+  <!-- CONTACT -->
+  <section class="contact-section">
+    <h2>Contact</h2>
+    <p>
+      Feel free to reach out at:
+      <a href="mailto:sureshadhesh28@gmail.com"><strong>sureshadhesh@gmail.com</strong></a>
+    </p>
+  </section>
+
+  <!-- FOOTER WITH SMOOTH SCROLL -->
+  <footer>
+    <a href="#top"><footer> 2025 Adhesh VS — All Rights Reserved</footer></a>
+  </footer>
+
+</body>
+</html>
